@@ -5,6 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" id="main" href="../main.css" type="text/css"/>
+        <style>
+            body {
+                visibility: hidden;  /* hide page until nav loads */
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -27,9 +32,11 @@
                     .then(data => {
                         console.log("Navbar HTML loaded:", data.substring(0, 100)); // show first 100 chars
                         document.getElementById("navbar").innerHTML = data;
+                        document.body.style.visibility = "visible";
                     })
                     .catch(error => {
                         console.error("Error loading navbar:", error);
+                        document.body.style.visibility = "visible";
                     });
             </script>
         </div>
