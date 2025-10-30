@@ -12,9 +12,9 @@
         </header>
         <div id="navbar">
             <script>
-                // console.log("Fetching navbar...");
-                // console.log("Current page:", window.location.href);
-                // console.log("Trying to fetch:", "../html/navbar/topnav.html");
+                console.log("Fetching navbar...");
+                console.log("Current page:", window.location.href);
+                console.log("Trying to fetch:", "../html/navbar/topnav.html");
 
                 fetch("../html/navbar/topnav.html")
                     .then(response => {
@@ -25,7 +25,7 @@
                         return response.text();
                     })
                     .then(data => {
-                        // console.log("Navbar HTML loaded:", data.substring(0, 100)); // show first 100 chars
+                        console.log("Navbar HTML loaded:", data.substring(0, 100)); // show first 100 chars
                         document.getElementById("navbar").innerHTML = data;
                     })
                     .catch(error => {
